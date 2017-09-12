@@ -20,9 +20,16 @@ namespace MastermindKata
 
         private static readonly object[] OneMarkForTotalMatchingPosition =
         {
+            new object[] {1, "r,g,y,c", "r,w,w,w" },
             new object[] {0, "r,g,y,c", "w,w,r,w"}
         };
 
+
+        private static readonly object[] TwoMarkForTotalMatchingPosition =
+        {
+            new object[] {2, "r,g,y,c", "r,g,w,r" },
+            new object[] {2, "w,r,c,y", "r,r,c,w" }
+        };
 
         [Test]
         public void ReturnBlackWhenCorrectColourAndPosition()
@@ -44,6 +51,7 @@ namespace MastermindKata
 
         [Test]
         [TestCaseSource(nameof(OneMarkForTotalMatchingPosition))]
+        [TestCaseSource(nameof(TwoMarkForTotalMatchingPosition))]
         public void ReturnTotalMatchingPosition(int expected, string solution, string guess)
         {
             var mastermind = new Mastermind();

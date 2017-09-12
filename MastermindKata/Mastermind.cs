@@ -19,7 +19,10 @@ namespace MastermindKata
 
         public int ReturnTotalMatchingPosition(string solution, string guess)
         {
-            return 0;
+            var solutionArray = solution.Split(',');
+            var guessArray = guess.Split(',');
+
+            return solutionArray.Where((t, i) => t == guessArray[i]).Count();
         }
     }
 }
