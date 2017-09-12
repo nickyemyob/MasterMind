@@ -6,5 +6,10 @@
         {
             return "b";
         }
+
+        public int ReturnTotalMatchingColour(string solution, string guess)
+        {
+            return 1;
+        }
     }
 }
