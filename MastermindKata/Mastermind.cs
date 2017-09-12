@@ -1,4 +1,6 @@
-﻿namespace MastermindKata
+﻿using System.Linq;
+
+namespace MastermindKata
 {
     public class Mastermind
     {
@@ -9,7 +11,15 @@
 
         public int ReturnTotalMatchingColour(string solution, string guess)
         {
-            return 1;
+            var solutionArray = solution.Split(',');
+            var guessArray = guess.Split(',');
+
+            return solutionArray.Intersect(guessArray).Count();
+        }
+
+        public int ReturnTotalMatchingPosition(string solution, string guess)
+        {
+            return 0;
         }
     }
 }
