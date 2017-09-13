@@ -4,22 +4,22 @@ namespace MastermindKata
 {
     public class Mastermind
     {
-        public string ReturnMark(string solution, string guess)
+        public string ReturnMark(string code, string guess)
         {
             return "b";
         }
 
-        public int ReturnTotalMatchingColour(string solution, string guess)
+        public int ReturnTotalMatchingColour(string code, string guess)
         {
-            var solutionArray = solution.Split(',');
+            var solutionArray = code.Split(',');
             var guessArray = guess.Split(',');
 
             return solutionArray.Intersect(guessArray).Count();
         }
 
-        public int ReturnTotalMatchingPosition(string solution, string guess)
+        public int ReturnTotalMatchingPosition(string code, string guess)
         {
-            var solutionArray = solution.Split(',');
+            var solutionArray = code.Split(',');
             var guessArray = guess.Split(',');
 
             return solutionArray.Where((t, i) => t == guessArray[i]).Count();
