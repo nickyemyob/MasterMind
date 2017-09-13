@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text;
 
 namespace MastermindKata
 {
@@ -6,7 +7,9 @@ namespace MastermindKata
     {
         public string ReturnMark(string code, string guess)
         {
-            return "b";
+            var totalMatchingPosition = ReturnTotalMatchingPosition(code, guess);
+            var totalMatchingColour = ReturnTotalMatchingColour(code, guess);
+            return new string('b', totalMatchingPosition) + new string('w', totalMatchingColour - totalMatchingPosition);
         }
 
         public int ReturnTotalMatchingColour(string code, string guess)
