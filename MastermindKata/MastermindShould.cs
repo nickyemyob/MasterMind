@@ -7,28 +7,28 @@ namespace MastermindKata
     {
         private static readonly object[] OneMarkForTotalMatchingColour =
         {
-            new object[] {1, "r,g,y,c", "r,w,w,w" },
-            new object[] {1, "r,g,y,c", "w,w,r,w" }
+            new object[] {1, new[]{"r","g","y","c"}, new[]{"r","w","w","w"} },
+            new object[] {1, new[] { "r", "g", "y", "c" }, new[] { "w", "w", "r", "w" } }
 
         };
 
         private static readonly object[] TwoMarkForTotalMatchingColour =
         {
-            new object[] {2, "r,g,y,c", "w,g,w,c" },
-            new object[] {2, "r,g,y,c", "w,r,w,c" }
+            new object[] {2, new[]{"r","g","y","c"}, new[]{"w","g","w","c"} },
+            new object[] {2, new[]{"r","g","y","c"}, new[] { "w", "r", "w", "c" } }
         };
 
         private static readonly object[] OneMarkForTotalMatchingPosition =
         {
-            new object[] {1, "r,g,y,c", "r,w,w,w" },
-            new object[] {0, "r,g,y,c", "w,w,r,w"}
+            new object[] {1, new[]{"r","g","y","c"}, new[]{"r","w","w","w"} },
+            new object[] {0, new[]{"r","g","y","c"}, new[] {"w","w","r","w"} }
         };
 
 
         private static readonly object[] TwoMarkForTotalMatchingPosition =
         {
-            new object[] {2, "r,g,y,c", "r,g,w,r" },
-            new object[] {2, "w,r,c,y", "r,r,c,w" }
+            new object[] {2, new[]{"r","g","y","c"}, new[] {"r","g","w","r"} },
+            new object[] {2, new[] { "w", "r", "c", "y" }, new[] {"r","r","c","w"}}
         };
 
         private static readonly object[] OneCorrectColourScenario =
@@ -75,7 +75,7 @@ namespace MastermindKata
         [Test]
         [TestCaseSource(nameof(OneMarkForTotalMatchingColour))]
         [TestCaseSource(nameof(TwoMarkForTotalMatchingColour))]
-        public void ReturnTotalMatchingColour(int expected, string code, string guess)
+        public void ReturnTotalMatchingColour(int expected, string[] code, string[] guess)
         {
             var mastermind = new Mastermind();
             var totalMatchingColour = mastermind.ReturnTotalMatchingColour(code, guess);
@@ -85,7 +85,7 @@ namespace MastermindKata
         [Test]
         [TestCaseSource(nameof(OneMarkForTotalMatchingPosition))]
         [TestCaseSource(nameof(TwoMarkForTotalMatchingPosition))]
-        public void ReturnTotalMatchingPosition(int expected, string code, string guess)
+        public void ReturnTotalMatchingPosition(int expected, string[] code, string[] guess)
         {
             var mastermind = new Mastermind();
             var totalMatchingColour = mastermind.ReturnTotalMatchingPosition(code, guess);
