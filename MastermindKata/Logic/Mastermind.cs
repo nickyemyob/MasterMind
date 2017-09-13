@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace MastermindKata
+namespace MastermindKata.Logic
 {
     public class Mastermind
     {

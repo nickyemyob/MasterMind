@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mastermind.cs" />
-    <Compile Include="MastermindShould.cs" />
+    <Compile Include="Logic\Mastermind.cs" />
+    <Compile Include="Test\MastermindShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

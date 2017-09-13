@@ -1,6 +1,7 @@
-﻿using NUnit.Framework;
+﻿using MastermindKata.Logic;
+using NUnit.Framework;
 
-namespace MastermindKata
+namespace MastermindKata.Test
 {
     [TestFixture]
     public class MastermindShould
