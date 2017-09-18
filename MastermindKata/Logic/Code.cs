@@ -12,8 +12,8 @@ namespace MastermindKata.Logic
         public string Generate()
         {
             var randomCode = new string(Enumerable.Repeat(_defaultColor, _codeLength)
-                .Select(s => s[Random.Next(s.Length) + ',']).ToArray());
-            return randomCode.TrimEnd(',');
+                .Select(s => s[Random.Next(s.Length)]).ToArray());
+            return randomCode.Select(s => s + ",").Aggregate((s, q) => s + q).TrimEnd(',');
         }
     }
 }
