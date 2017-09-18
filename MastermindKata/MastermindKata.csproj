@@ -53,6 +53,8 @@
     <Compile Include="Logic\GameConsole.cs" />
     <Compile Include="Logic\Mastermind.cs" />
     <Compile Include="Test\CodeShould.cs" />
+    <Compile Include="Logic\GuessValidator.cs" />
+    <Compile Include="Test\GuessValidatorShould.cs" />
     <Compile Include="Test\MastermindShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

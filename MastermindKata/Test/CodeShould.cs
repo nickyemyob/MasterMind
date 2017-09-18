@@ -11,8 +11,8 @@ namespace MastermindKata.Test
         {
             var code = new Code();
             var randomCode = code.Generate();
-            var defaultCodeLength = 4;
-            Assert.AreEqual(defaultCodeLength, randomCode.Length);
+            var lengthOfCodeWithComma = 7;
+            Assert.AreEqual(lengthOfCodeWithComma, randomCode.Length);
         }
     }
 }
