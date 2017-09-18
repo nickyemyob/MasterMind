@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MastermindKata.Logic
 {
@@ -14,8 +11,9 @@ namespace MastermindKata.Logic
 
         public string Generate()
         {
-            return new string(Enumerable.Repeat(_defaultColor, _codeLength)
-                .Select(s => s[Random.Next(s.Length)]).ToArray());
+            var randomCode = new string(Enumerable.Repeat(_defaultColor, _codeLength)
+                .Select(s => s[Random.Next(s.Length) + ',']).ToArray());
+            return randomCode.TrimEnd(',');
         }
     }
 }
