@@ -8,18 +8,26 @@ namespace MastermindKata.Logic
     {
         static void Main()
         {
-            var mastermind = new Mastermind();
+            var mastermind = new Mastermind(new GuessValidator());
             var code = new Code();
             var guess = "";
-            var response = "The mark was: ";
-            
+            const string response = "The mark was: ";
+            Console.WriteLine("Welcome to Mastermind! ");
             while (guess != "stop")
             {
-                Console.WriteLine("Welcome to Mastermind! Please insert your guess (eg: r,g,y,c)");
+                Console.WriteLine("Please insert your guess (eg: r,g,y,c)");
                 guess = Console.ReadLine();
                 if(guess == "stop") return;
-                var mark = mastermind.ReturnMark(code.Generate(), guess);
-                Console.WriteLine(response+ mark);
+                try
+                {
+                    var mark = mastermind.ReturnMark(code.Generate(), guess);
+                    Console.WriteLine(response + mark + Environment.NewLine);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message + Environment.NewLine);
+                }
+                
             }
             Console.ReadKey();
         }
