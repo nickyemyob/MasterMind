@@ -25,13 +25,13 @@ namespace MastermindKata.Logic
         public int ReturnWhiteMark(string[] code, string[] guess)
         {
             var totalWhiteMark = 0;
-            var guessArray = guess.ToList();
+            var guessList = guess.ToList();
             foreach (var color in code)
             {
-                if (guessArray.Contains(color))
+                if (guessList.Contains(color))
                 {
                     totalWhiteMark++;
-                    guessArray.RemoveAt(guessArray.IndexOf(color));
+                    guessList.RemoveAt(guessList.IndexOf(color));
                 }
             }
             return totalWhiteMark;
