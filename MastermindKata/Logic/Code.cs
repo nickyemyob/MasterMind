@@ -6,7 +6,7 @@ namespace MastermindKata.Logic
     public class Code
     {
         private static readonly Random Random = new Random();
-        private readonly string _defaultColor = "rgyc";
+        private readonly string _defaultColor = "rgycw";
         private readonly int _codeLength = 4;
 
         public string Generate()
