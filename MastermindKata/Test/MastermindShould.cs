@@ -16,7 +16,8 @@ namespace MastermindKata.Test
         private static readonly object[] TwoMarkForTotalMatchingColour =
         {
             new object[] {2, new[]{"r","g","y","c"}, new[]{"w","g","w","c"} },
-            new object[] {2, new[]{"r","g","y","c"}, new[] { "w", "r", "w", "c" } }
+            new object[] {2, new[]{"r","g","y","c"}, new[] { "w", "r", "w", "c" } },
+            new object[] {3, new[] { "g", "g", "r", "c" }, new[] { "g", "r", "c", "y" } }
         };
 
         private static readonly object[] OneMarkForTotalMatchingPosition =
