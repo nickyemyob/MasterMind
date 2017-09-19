@@ -58,6 +58,7 @@
     <Compile Include="Interface\IGameConfigSerialiser.cs" />
     <Compile Include="Logic\IGameConfigService.cs" />
     <Compile Include="Logic\Mastermind.cs" />
+    <Compile Include="Mock\MockGameConfigSerialiser.cs" />
     <Compile Include="Test\CodeShould.cs" />
     <Compile Include="Logic\GuessValidator.cs" />
     <Compile Include="Test\GuessValidatorShould.cs" />
