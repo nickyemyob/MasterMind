@@ -12,6 +12,7 @@ namespace MastermindKata.Logic
             var code = new Code();
             var guess = "";
             const string response = "The mark was: ";
+            var randomCode = code.Generate();
             Console.WriteLine("Welcome to Mastermind! ");
             while (guess != "stop")
             {
@@ -20,14 +21,19 @@ namespace MastermindKata.Logic
                 if(guess == "stop") return;
                 try
                 {
-                    var mark = mastermind.ReturnMark(code.Generate(), guess);
+                    var mark = mastermind.ReturnMark(randomCode, guess);
+                    if(mastermind.CheckWinCondition(mark))
+                    {
+                        Console.WriteLine("You have won the game!");
+                        Console.ReadKey();
+                        return;
+                    }
                     Console.WriteLine(response + mark + Environment.NewLine);
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message + Environment.NewLine);
                 }
-                
             }
             Console.ReadKey();
         }
