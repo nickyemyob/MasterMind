@@ -1,10 +1,29 @@
-﻿namespace MastermindKata.Logic
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using MastermindKata.Interface;
+
+namespace MastermindKata.Logic
 {
-    internal class GuessValidator
+    public class GuessValidator : IGuessValidator
     {
-        public string CheckForComma(string guess)
+        public void CheckForComma(string guess)
         {
-            return !guess.Contains(",") ? "Guess should contain commas between colours." : string.Empty;
+            if (!guess.Contains(','))
+            {
+                throw new ArgumentException("Guess should contain commas between colours.");
+            }
+        }
+
+        public void CheckForInvalidColour(string guess)
+        {
+            const string defaultColour = "rgycw";
+            var invalidColour = guess.Split(',').Where(colour => !defaultColour.Contains(colour.ToString())).ToList();
+            if (invalidColour.Any())
+            {
+                throw new ArgumentException("Guess should only contains r,g,y,c. Invalid colours are: " + string.Join(",", invalidColour));
+            }
+              
         }
     }
 }
