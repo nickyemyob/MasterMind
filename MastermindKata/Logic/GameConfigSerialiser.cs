@@ -1,10 +1,11 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using MastermindKata.DTO;
+using MastermindKata.Interface;
 
 namespace MastermindKata.Logic
 {
-    public class GameConfigSerialiser
+    public class GameConfigSerialiser : IGameConfigSerialiser
     {
         protected static readonly XmlSerializer _serialiser = new XmlSerializer(typeof(GameConfig));
 

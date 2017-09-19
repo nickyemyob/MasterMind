@@ -52,8 +52,11 @@
     <Compile Include="DTO\GameConfig.cs" />
     <Compile Include="Logic\Code.cs" />
     <Compile Include="Logic\GameConfigSerialiser.cs" />
+    <Compile Include="Logic\GameConfigService.cs" />
     <Compile Include="Logic\GameConsole.cs" />
     <Compile Include="Interface\IGuessValidator.cs" />
+    <Compile Include="Interface\IGameConfigSerialiser.cs" />
+    <Compile Include="Logic\IGameConfigService.cs" />
     <Compile Include="Logic\Mastermind.cs" />
     <Compile Include="Test\CodeShould.cs" />
     <Compile Include="Logic\GuessValidator.cs" />
@@ -67,8 +70,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="GameConfig\" />
+    <Content Include="GameConfig\NormalMode.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
