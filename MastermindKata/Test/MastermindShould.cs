@@ -92,5 +92,21 @@ namespace MastermindKata.Test
             var totalMatchingColour = mastermind.ReturnBlackMark(code, guess);
             Assert.AreEqual(expected, totalMatchingColour);
         }
+
+        [Test]
+        public void ReturnTrueIfPlayerHasWon()
+        {
+            var mastermind = new Mastermind(new GuessValidator());
+            var actualCondition = mastermind.CheckWinCondition("bbbb");
+            Assert.IsTrue(actualCondition);
+        }
+
+        [Test]
+        public void ReturnFalseIfPlayerHasNotWon()
+        {
+            var mastermind = new Mastermind(new GuessValidator());
+            var actualCondition = mastermind.CheckWinCondition("bbbw");
+            Assert.IsFalse(actualCondition);
+        }
     }
 }

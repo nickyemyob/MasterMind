@@ -24,7 +24,7 @@ namespace MastermindKata.Logic
 
         public int ReturnWhiteMark(string[] code, string[] guess)
         {
-            return code.Intersect(guess).Count();
+            return code.Where(guess.Contains).ToList().Count;
         }
 
         public int ReturnBlackMark(string[] code, string[] guess)
@@ -36,6 +36,12 @@ namespace MastermindKata.Logic
         {
             codeArray = code.Split(',');
             guessArray = guess.Split(',');
+        }
+
+        public bool CheckWinCondition(string mark)
+        {
+            const string winningMark = "bbbb";
+            return mark == winningMark;
         }
     }
 }
