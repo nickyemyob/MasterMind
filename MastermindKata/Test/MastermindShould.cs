@@ -68,7 +68,7 @@ namespace MastermindKata.Test
         [TestCaseSource(nameof(FourCorrectColourScenario))]
         public void ReturnCorrectMark(string expectedMark, string code, string guess)
         {
-            var mastermind = new Mastermind();
+            var mastermind = new Mastermind(new GuessValidator());
             var markResult = mastermind.ReturnMark(code, guess);
             Assert.AreEqual(expectedMark, markResult);
         }
@@ -78,8 +78,8 @@ namespace MastermindKata.Test
         [TestCaseSource(nameof(TwoMarkForTotalMatchingColour))]
         public void ReturnTotalMatchingColour(int expected, string[] code, string[] guess)
         {
-            var mastermind = new Mastermind();
-            var totalMatchingColour = mastermind.ReturnTotalMatchingColour(code, guess);
+            var mastermind = new Mastermind(new GuessValidator());
+            var totalMatchingColour = mastermind.ReturnWhiteMark(code, guess);
             Assert.AreEqual(expected, totalMatchingColour);
         }
 
@@ -88,8 +88,8 @@ namespace MastermindKata.Test
         [TestCaseSource(nameof(TwoMarkForTotalMatchingPosition))]
         public void ReturnTotalMatchingPosition(int expected, string[] code, string[] guess)
         {
-            var mastermind = new Mastermind();
-            var totalMatchingColour = mastermind.ReturnTotalMatchingPosition(code, guess);
+            var mastermind = new Mastermind(new GuessValidator());
+            var totalMatchingColour = mastermind.ReturnBlackMark(code, guess);
             Assert.AreEqual(expected, totalMatchingColour);
         }
     }

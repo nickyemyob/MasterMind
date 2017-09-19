@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Logic\Code.cs" />
     <Compile Include="Logic\GameConsole.cs" />
+    <Compile Include="Interface\IGuessValidator.cs" />
     <Compile Include="Logic\Mastermind.cs" />
     <Compile Include="Test\CodeShould.cs" />
     <Compile Include="Logic\GuessValidator.cs" />
