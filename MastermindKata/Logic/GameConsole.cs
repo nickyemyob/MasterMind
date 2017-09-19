@@ -7,7 +7,7 @@ namespace MastermindKata.Logic
         static void Main()
         {
             var mastermind = new Mastermind(new GuessValidator());
-            var code = new Code();
+            var code = new Code(new GameConfigService(new GameConfigSerialiser()));
             var guess = "";
             const string response = "The mark was: ";
             var randomCode = code.Generate();
