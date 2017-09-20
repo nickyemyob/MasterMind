@@ -3,7 +3,7 @@ using MastermindKata.Interface;
 
 namespace MastermindKata.Logic
 {
-    public class Mastermind
+    public class Mastermind : IMastermind
     {
         private IGuessValidator GuessValidator { get; set; }
 

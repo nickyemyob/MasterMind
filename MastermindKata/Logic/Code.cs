@@ -4,7 +4,7 @@ using MastermindKata.Interface;
 
 namespace MastermindKata.Logic
 {
-    public class Code
+    public class Code : ICode
     {
         private static readonly Random Random = new Random();
         private string _defaultColor;

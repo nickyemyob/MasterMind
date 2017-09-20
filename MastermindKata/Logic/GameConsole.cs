@@ -1,4 +1,6 @@
 ﻿using System;
+using MastermindKata.Interface;
+using Microsoft.Practices.Unity;
 
 namespace MastermindKata.Logic
 {
@@ -6,8 +8,9 @@ namespace MastermindKata.Logic
     {
         static void Main()
         {
-            var mastermind = new Mastermind(new GuessValidator());
-            var code = new Code(new GameConfigService(new GameConfigSerialiser()));
+            RegisterDependencies();
+            var mastermind = Container.Resolve<IMastermind>();
+            var code = Container.Resolve<ICode>();
             var guess = "";
             const string response = "The mark was: ";
             var randomCode = code.Generate();
@@ -34,6 +37,18 @@ namespace MastermindKata.Logic
                 }
             }
             Console.ReadKey();
+        }
+
+        private static UnityContainer Container { get; set; }
+
+        static void RegisterDependencies()
+        {
+            Container = new UnityContainer();
+            Container.RegisterType<IGuessValidator, GuessValidator>();
+            Container.RegisterType<IGameConfigService, GameConfigService>();
+            Container.RegisterType<IGameConfigSerialiser, GameConfigSerialiser>();
+            Container.RegisterType<ICode, Code>();
+            Container.RegisterType<IMastermind, Mastermind>();
         }
     }
 }
