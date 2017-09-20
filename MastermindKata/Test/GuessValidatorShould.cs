@@ -20,7 +20,7 @@ namespace MastermindKata.Test
         public void ReturnErrorMessageWhenUserGuessContainsInvalidColour()
         {
             var guessValidator = new GuessValidator();
-            const string expectedErrorMessage = "Guess should only contains r,g,y,c. Invalid colours are: d,f";
+            const string expectedErrorMessage = "Guess should only contains r,g,y,c,w. Invalid colours are: d,f";
             Assert.Throws<ArgumentException>(() => guessValidator.CheckForInvalidColour("r,d,f,c"));
             Assert.That(() => guessValidator.CheckForInvalidColour("r,d,f,c"), Throws.TypeOf<ArgumentException>().With.Message.EqualTo(expectedErrorMessage));
         }

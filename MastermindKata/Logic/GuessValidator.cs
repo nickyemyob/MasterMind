@@ -21,7 +21,7 @@ namespace MastermindKata.Logic
             var invalidColour = guess.Split(',').Where(colour => !defaultColour.Contains(colour.ToString())).ToList();
             if (invalidColour.Any())
             {
-                throw new ArgumentException("Guess should only contains r,g,y,c. Invalid colours are: " + string.Join(",", invalidColour));
+                throw new ArgumentException("Guess should only contains r,g,y,c,w. Invalid colours are: " + string.Join(",", invalidColour));
             }
               
         }
