@@ -9,6 +9,11 @@ namespace MastermindKata.Logic
         static void Main()
         {
             RegisterDependencies();
+            PlayGame();
+        }
+
+        private static void PlayGame()
+        {
             var mastermind = Container.Resolve<IMastermind>();
             var code = Container.Resolve<ICode>();
             var guess = "";
@@ -17,13 +22,13 @@ namespace MastermindKata.Logic
             Console.WriteLine("Welcome to Mastermind! ");
             while (guess != "stop")
             {
-                Console.WriteLine("Please insert your guess (eg: r,g,y,c)");
+                Console.WriteLine("Please insert your guess (eg: r,g,y,c,w)");
                 guess = Console.ReadLine();
-                if(guess == "stop") return;
+                if (guess == "stop") return;
                 try
                 {
                     var mark = mastermind.ReturnMark(randomCode, guess);
-                    if(mastermind.CheckWinCondition(mark))
+                    if (mastermind.CheckWinCondition(mark))
                     {
                         Console.WriteLine("You have won the game!");
                         Console.ReadKey();
